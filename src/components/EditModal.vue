@@ -7,7 +7,7 @@
           <b-form-input
             id="input-1"
             maxlength="30"
-            v-model="form.name"
+            v-model="user.name"
             required
             placeholder="Enter name"
           ></b-form-input>
@@ -21,7 +21,7 @@
         >
           <b-form-input
             id="input-2"
-            v-model="form.email"
+            v-model="user.email"
             type="email"
             required
             placeholder="Enter email"
@@ -32,7 +32,7 @@
           <b-form-input
             maxlength="50"
             id="input-3"
-            v-model="form.address"
+            v-model="user.address"
             required
             placeholder="Enter Address"
           ></b-form-input>
@@ -47,7 +47,7 @@
             maxlength="50"
           ></b-form-textarea>
         </b-form-group>
-        <b-button class="btn-style" variant="warning">Update</b-button>
+        <b-button class="btn-style" variant="warning" @click="$emit('updateModal', user.id)">Update</b-button>
         <b-button class="btn-style" variant="danger" @click="$emit('cancelModal', user.id)">Cancel</b-button>
       </b-form>
     </div>

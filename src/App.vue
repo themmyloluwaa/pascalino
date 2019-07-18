@@ -43,24 +43,29 @@ export default {
     editUser(id) {
       this.userInfo = this.userInfo.forEach(user => {
         if (user.id === id) {
+          console.log(user);
           this.current = user;
           this.isEditing = true;
         }
       });
     },
     cancelModal(id) {
+          this.isEditing = false;
       // console.log(this);
-      let $vm = this;
-      console.log($vm.userInfo);
-      console.log($vm);
-      return () => {
-        $vm.userInfo = $vm.userInfo.forEach(user => {
-          if (user.id === id) {
-            $vm.current = user;
-            $vm.isEditing = false;
-          }
-        });
-      };
+      // let $vm = this;
+      // console.log($vm.userInfo);
+      // console.log($vm);
+      // return () => {
+      //   $vm.userInfo = $vm.userInfo.forEach(user => {
+      //     if (user.id === id) {
+      //       this.current = user;
+      //       this.isEditing = false;
+      //     }
+      //   });
+      // };
+    },
+    updateModal(inputData){
+       this.userInfo = [...this.userInfo, inputData];
     }
   }
 };

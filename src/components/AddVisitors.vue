@@ -75,7 +75,7 @@ export default {
         address: this.form.address,
         comment: this.form.comment
       };
-      this.$emit("add-user", inputData);
+       this.$emit('add-user', inputData);
       this.form.name = "";
       this.form.email = "";
       this.form.address = "";
